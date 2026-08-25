@@ -204,6 +204,10 @@ ERC-8004 extensions for each ecosystem's canonical Ethereum SDK — viem actions
 
 Sybil-resistant reputation reference implementation combining stake-weighted bonding with dual graph-structural signals (local conductance + SybilRank-style propagation). Adversarially tested against a bridge-attack construction and a whitewashing attack. Open, MIT-licensed, no token.
 
+**[Kuberna Labs](https://github.com/kawacukennedy/kuberna-labs)**
+
+Cross-chain intent execution SDK for ERC-8004 agents. Registered agents create and settle typed intents across NEAR, Base, and Mantle, with required/forbidden field enforcement per identity. Execution proofs are attested via zkTLS and TEE and attributed back to the agent's ERC-8004 identity, so cross-chain action trails link to the on-chain agent ID. MIT licensed.
+
 **[OmniClaw](https://github.com/OmniClaw/OmniClaw)**
 
 Python CLI + policy engine for agent payments. Combines ERC-8004 (trust gates), EIP-3009 (gasless USDC signing), and x402 (payment requests) behind a single authority layer, so agents never hold raw wallet keys. Multi-rail routing across Circle Gateway, x402 Exact, and a self-hosted facilitator. MIT, pip install omniclaw.
@@ -316,6 +320,20 @@ Engagement marketplace for the agent economy on Base: AI agents and communities 
 - [Agent profile (ERC-8004 #55214, Base)](https://agentarena.site/api/agent/8453/55214) - On-chain agent identity on the Base Identity Registry (`0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`)
 - [A2A Agent Card](https://app.cyberdyne-os.xyz/.well-known/agent-card.json) - A2A v0.3.0 agent card (HTTP+JSON) with skills: post_task, authorize_task, get_task, review_submission, close_task, reclaim
 - [cyberdyne-mcp](https://github.com/Cyberdyne-OS/cyberdyne-mcp) - Open-source MCP gateway (MIT, npm: `cyberdyne-mcp`) for agents to post, fund, and review human quests. Self-onboard: `npx -y cyberdyne-mcp onboard`
+
+**[Synmerco](https://synmerco.com)**
+
+Escrow-protected payments with automated dispute resolution for ERC-8004 agents. Seven-state escrow machine, per-transaction insurance, collateral staking, spending limits, and ERC-8183 evaluators, with settlement outcomes dual-written to the Reputation Registry. Registered on four chains: Base [#45119](https://basescan.org/nft/0x8004A169FB4a3325136EB29fA0ceB6D2e539a432/45119), Arbitrum #821, Polygon #433, and Optimism #491.
+
+- [@synmerco/mcp-server](https://www.npmjs.com/package/@synmerco/mcp-server) - 29 MCP tools for escrow, negotiation, and marketplace operations
+- [Agent Card](https://synmerco.com/.well-known/agent.json) - A2A-compatible agent card; agent manifest at [/agent-manifest.json](https://synmerco.com/agent-manifest.json)
+- [Whitepaper](https://synmerco.com/synmerco-whitepaper.pdf) - Escrow model, insurance mechanics, and dispute flow
+
+**[PactEscrow](https://dopeasset.com)**
+
+- [PactEscrow (Arbitrum One)](https://arbiscan.io/address/0x220B97972d6028Acd70221890771E275e7734BFB) - Trustless escrow contract for agent commerce. Every completed settlement leaves an on-chain reliability record that an ERC-8004 reputation registry can consume as an attestation.
+- [Comparison with ERC-8183](https://dopeasset.com/blog/agent-escrow-and-erc-8183.html) - How the escrow model differs from the Agentic Commerce Protocol
+- [Usage guide](https://dopeasset.com/how-to-escrow.html) - Walkthrough of the escrow flow
 
 ### Verification & Identity
 
@@ -602,6 +620,10 @@ Tools for browsing and querying on-chain ERC-8004 registries.
 - **[trust8004.xyz](https://www.trust8004.xyz)** - Agent discovery and management tool
 - **[agenteconomy.to](https://agenteconomy.to)** - Real-time dashboard tracking ERC-8004 agent registry events on Base alongside x402, ERC-8183, and MPP protocols. Aggregated metrics, daily charts, and chain breakdowns refreshed every 6 hours
 - **[erc-8004-liveness](https://github.com/yaojin0609/erc-8004-liveness)** - Liveness measurement across 12 chains: two-round protocol-level endpoint probing 48h apart (A2A agent card, MCP initialize/tools-list), host-stratified reweighting, and cross-chain integrity reconciliation. Open dataset, methodology, and MIT-licensed scanner
+- **[Quicknode ERC-8004 Explorer](https://erc-8004.quicknode.com)** - Multi-chain explorer for agents, feedback, and validations across EVM mainnets and testnets. Resolves IPFS/Arweave agent metadata and supports submitting feedback directly from a browser wallet. Bundles learning material under `/learn`, `/tutorials`, and `/docs/contracts`
+- **[On-Chain Agent Intel](https://onchainagentintel.io)** - Indexes the Identity and Reputation registries across Base, Ethereum, and BNB Chain. Free leaderboard and agent-to-agent payment graph, with per-agent readiness, trust, and reputation intel over x402 (USDC on Base). Free MCP server at `api.onchainagentintel.io/mcp`. Registered as [Agent #19353](https://basescan.org/nft/0x8004A169FB4a3325136EB29fA0ceB6D2e539a432/19353) on the Base Identity Registry
+- **[Mydentify Agent Identity Inspector](https://mydentify.com/tools/erc-8004-agent-identity-inspector)** - Read-only browser tool that resolves an agent's registry record and registration file, showing owner, agent wallet, active flag, service endpoints, and any declared x402 statement. No wallet connection required; documents registry fields and the limits of what public metadata proves
+- **[AtlasNexus Verify](https://atlasnexus.tech/verify/)** - Client-side identity verification dApp (ethers.js, no backend): register an agent, look up any address against the Identity and Reputation registries, sign a message, and verify a signature. Live on Celo mainnet, bilingual FR/EN
 
 ## Research & Papers
 
