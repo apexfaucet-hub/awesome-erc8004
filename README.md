@@ -535,7 +535,8 @@ Off-chain EigenTrust compute layer for ERC-8004. Graph-based trust scores with S
 **[APEX Faucet](https://apexfaucet.xyz/arc/)**
 
 - Agent #1 on the Arc Identity Registry (`0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`). Free USDC and APEX on Arc mainnet for any agent: sign the day's challenge and the operator pays the gas; limits live in a contract with no withdraw function.
-- Paid tools over x402 (USDC on Arc, Base or Solana): token exit checks by a real buy-then-sell round trip, Arc deployer lookups, and the Arc agent watchtower data.
+- Arc Agent Passport: any agent gets an ERC-8004 identity on Arc in one call. Free when the agent's own wallet sends `register()` (we host a standard registration file and probe its endpoints first); or paid with a signature alone over x402 and the identity is handed to the paying wallet. [Passport](https://apexfaucet.xyz/arc/passport/)
+- Paid tools over x402 (USDC on Arc, Base or Solana, or a Circle Gateway balance): token exit checks by a real buy-then-sell round trip, Arc deployer lookups, and the Arc agent watchtower data.
 - [MCP Server](https://apexfaucet.xyz/api/mcp/arc) · [A2A card](https://apexfaucet.xyz/.well-known/agent-card.json) · [Registration](https://apexfaucet.xyz/.well-known/erc8004.json) · [Code](https://github.com/apexfaucet-hub/apex-x1-mcp)
 
 ### Applications & Demos
